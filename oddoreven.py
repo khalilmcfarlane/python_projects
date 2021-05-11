@@ -7,15 +7,19 @@ def even_or_odd(n):
 
 name = input("What's your name?\n")
 print("Hello, {}.".format(name))
+times_played = int(input("How many times do you want to play? "))
+i = 0
 print("Please input some numbers one at a time!\nI will tell you whether the number is even or odd.")
-for i in range(10):
-    number = input()
-    is_float = isinstance(number, float)
-    num = int(number)
-    ans = even_or_odd(num)
-    if ans:
-        print(num, "is an even number!")
-    else:
-        print(num, "is an odd number!")
+while i < times_played:
+    try:
+        number = int(input())
+        ans = even_or_odd(number)
+        i+= 1
+        if ans:
+            print(number, "is an even number!")
+        else:
+            print(number, "is an odd number!")
+    except Exception:
+        print("That is not a valid input. Please try again!")
 
 print("All done!")
