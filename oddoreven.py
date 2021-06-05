@@ -1,4 +1,4 @@
-def even_or_odd(n):
+def odd_or_even(n):
     if n % 2 == 0:
         return True
     else:
@@ -13,7 +13,7 @@ print("Please input some numbers one at a time!\nI will tell you whether the num
 while i < times_played:
     try:
         number = int(input())
-        ans = even_or_odd(number)
+        ans = odd_or_even(number)
         i+= 1
         if ans:
             print(number, "is an even number!")
