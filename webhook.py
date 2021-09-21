@@ -8,9 +8,8 @@ class Webhook:
         replace url/data with your webhook url/data 
     """
 
-    def __init__(self, ul):
-        self.url = ul
-        # self.url = 'https://discordapp.com/api/webhooks/889914608230490164/c6WbHCJ4uijOqFzy_19AdIlbIKHBS9Et1yoGULGPY4iECjOGcdtFjocFjmcdidaomlU0'
+    def __init__(self, url):
+        self.webhook_url = url
         self.embed = {
             "description": "Just testing out this webhook",
             "title": "donkurayami",
@@ -29,8 +28,7 @@ class Webhook:
     """
 
     def send_webhook(self):
-        # data = json.dumps(self.vals)
-        request = requests.post(self.url, json=self.data)
+        request = requests.post(self.webhook_url, json=self.data)
         request.raise_for_status()
 
 
